@@ -1,0 +1,53 @@
+﻿<Window x:Class="Pract_4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pract_4"
+        mc:Ignorable="d"
+        Title="Options" Height="280" Width="400">
+
+    <Grid Background="#D4D0C8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <GroupBox Header="Draw" Grid.Row="0" Grid.Column="0" Margin="10,5,30,5">
+            <StackPanel Margin="5">
+                <RadioButton Content="Draw one" IsChecked="True" Margin="0,5,0,5"/>
+                <RadioButton Content="Draw three"/>
+            </StackPanel>
+        </GroupBox>
+
+        <GroupBox Header="Scoring" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Margin="10,5,10,5">
+            <StackPanel Margin="5">
+                <RadioButton Content="No scoring" Margin="0,5,0,0"/>
+                <RadioButton Content="Standard scoring" IsChecked="True" Margin="0,5,0,0" />
+                <RadioButton Content="Vegas scoring" Margin="0,5,0,0"/>
+                <CheckBox Content="Cumulative" IsEnabled="False" Margin="10,5,0,0" />
+            </StackPanel>
+        </GroupBox>
+
+        <StackPanel Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" Margin="20,5,0,0">
+            <CheckBox Content="Display animations" IsChecked="True" IsEnabled="False" Margin="0,0,0,5"/>
+            <CheckBox Content="Play sounds" IsChecked="True" Margin="0,0,0,5"/>
+            <CheckBox Content="Show tips" IsChecked="True" Margin="0,0,0,5"/>
+            <CheckBox Content="Always continue saved game" Margin="0,0,0,5"/>
+            <CheckBox Content="Always save game on exit" />
+        </StackPanel>
+
+        <CheckBox Grid.Row="2" Grid.Column="1" Content="Timed game" IsChecked="True" Margin="20,5,0,0" />
+
+        <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,10,0">
+            <Button Content="OK" Width="100" Margin="5" />
+            <Button Content="Cancel" Width="100" Margin="5" />
+        </StackPanel>
+    </Grid>
+</Window>

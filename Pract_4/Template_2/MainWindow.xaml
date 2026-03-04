@@ -1,0 +1,47 @@
+﻿<Window x:Class="Template_2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Template_2"
+        mc:Ignorable="d"
+        Title="Сведения о расположении" Height="490" Width="400">
+    
+    <Grid>
+        <StackPanel Margin="10">
+            <TextBlock Text="Чтобы создать телефонное или модемное подключение, введите следующие сведения о вашем текущем расположении." 
+                       TextWrapping="Wrap" Margin="0,0,0,15" />
+
+            <StackPanel Margin="0,0,0,10">
+                <Label Content="Страна, где вы сейчас находитесь:" Padding="0,5" />
+                <Expander Header="Россия" Width="250" HorizontalAlignment="Left" >
+                    <StackPanel Margin="10,5">
+                        <RadioButton Content="Россия" IsChecked="True"/>
+                        <RadioButton Content="Беларусь" />
+                        <RadioButton Content="Казахстан" />
+                    </StackPanel>
+                </Expander>
+            </StackPanel>
+
+            <Label Content="Телефонный код города:"  Padding="0,5"/>
+            <TextBox Width="60" HorizontalAlignment="Left" Margin="0,0,0,10" />
+
+            <Label Content="Код выхода на линию поставщика услуг:"  Padding="0,5"/>
+            <TextBox Width="60" IsEnabled="False" HorizontalAlignment="Left" Margin="0,0,0,10" />
+
+            <Label Content="Код выхода на городскую линию (для офисных АТС):"  Padding="0,5"/>
+            <TextBox Width="60" HorizontalAlignment="Left" Margin="0,0,0,15" />
+
+            <Label Content="Тип набора номера:"  Padding="0,5"/>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,25">
+                <RadioButton Content="тоновый набор" IsChecked="True" Margin="0,0,20,0" />
+                <RadioButton Content="импульсный набор"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Content="ОК" Width="85" Margin="5" />
+                <Button Content="Отмена" Width="85" Margin="5" />
+            </StackPanel>
+        </StackPanel>
+</Grid>
+</Window>
