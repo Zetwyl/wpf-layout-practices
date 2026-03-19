@@ -1,0 +1,75 @@
+﻿<Window x:Class="Task_2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Task_2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="250" Width="700">
+
+    <Window.Resources>
+        <!-- Стиль для кнопок сверху -->
+        <Style x:Key="MenuButtonStyle" TargetType="Button">
+            <Setter Property="Margin" Value="0,0,5,0" />
+        </Style>
+
+        <!-- Стиль для элементов слева -->
+        <Style x:Key="FileListItemStyle" TargetType="TextBlock">
+            <Setter Property="Margin" Value="0,0,0,10" />
+        </Style>
+
+        <!-- Стиль для кнопок справа -->
+        <Style x:Key="LargeButtonStyle" TargetType="Button">
+            <Setter Property="Height" Value="90" />
+            <Setter Property="Width" Value="70" />
+            <Setter Property="Margin" Value="0,0,15,15" />
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Последние документы" Grid.Row="0" Grid.Column="0" Margin="5,5,15,10"/>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1">
+            <Button Content="Открыть" Style="{StaticResource MenuButtonStyle}" />
+            <Button Content="Сохранить" Style="{StaticResource MenuButtonStyle}" />
+            <Button Content="Закрыть" Style="{StaticResource MenuButtonStyle}" />
+            <Button Content="Обработать" Style="{StaticResource MenuButtonStyle}" />
+            <Button Content="О программе" />
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="0" Margin="5,0,0,0" >
+            <TextBlock Text="1.txt" Style="{StaticResource FileListItemStyle}" />
+            <TextBlock Text="2.txt" Style="{StaticResource FileListItemStyle}" />
+            <TextBlock Text="3.txt" Style="{StaticResource FileListItemStyle}" />
+            <TextBlock Text="4.txt" Style="{StaticResource FileListItemStyle}" />
+            <TextBlock Text="5.txt" Style="{StaticResource FileListItemStyle}" />
+            <TextBlock Text="6.txt" Style="{StaticResource FileListItemStyle}" />
+        </StackPanel>
+
+        <DockPanel Grid.Row="1" Grid.Column="1">
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="0,10,0,10" >
+                <TextBlock Text="1.txt" FontWeight="Bold" Margin="0,0,10,0" />
+                <TextBlock Text="2.txt" Margin="0,0,10,0" />
+                <TextBlock Text="3.txt" />
+            </StackPanel>
+
+            <WrapPanel Orientation="Horizontal" Margin="5,0,0,0">
+                <Button Background="Yellow" Content="A" Style="{StaticResource LargeButtonStyle}"/>
+                <Button Background="Red" Content="B" Style="{StaticResource LargeButtonStyle}"/>
+                <Button Background="Green" Content="C" Style="{StaticResource LargeButtonStyle}"/>
+                <Button Background="Blue" Content="D" Style="{StaticResource LargeButtonStyle}"/>
+                <Button Background="Gray" Content="E" Style="{StaticResource LargeButtonStyle}"/>
+                <Button Background="LightGoldenrodYellow" Content="F" Style="{StaticResource LargeButtonStyle}"/>
+            </WrapPanel>
+        </DockPanel>
+    </Grid>
+</Window>
